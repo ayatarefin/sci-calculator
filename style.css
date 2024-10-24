@@ -1,0 +1,102 @@
+/* Main calculator container */
+body{
+    background-color: #000000;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+.calculator-container {
+    width: 300px;
+    padding: 30px;
+    margin: 0 auto;
+    background-color: #333;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Screen styling */
+.screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #222;
+    padding: 15px;
+    border-radius: 1px;
+    color: white;
+    font-size: 1.5rem;
+    height: 80px;
+    margin-bottom: 30px;
+}
+
+.input, .result {
+    text-align: right;
+}
+
+/* Buttons container */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 buttons per row */
+    grid-template-rows: repeat(8, 1fr);   /* 8 rows total */
+    gap: 10px; /* Space between buttons */
+}
+
+/* Button styling */
+button {
+    width: 100%;
+    height: 40px;
+    font-size: 1.2rem;
+    background-color: #444;
+    color: white;
+    border: none;
+    border-radius: 100px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+/* Functional buttons (C, %, etc.) */
+.buttons-functionalities {
+    background-color: hsl(190, 27%, 47%);
+    color: rgb(0, 0, 0);
+}
+
+/* Digits buttons (0-9) */
+.buttons-digits {
+    background-color: hsl(31, 28%, 47%);
+    color: white;
+}
+
+/* Arithmetic operators (+, -, *, /) */
+.arithmetic-operators {
+    background-color: rgb(238, 198, 98);
+    color: rgb(0, 0, 0);
+}
+
+/* Equals button (=) */
+.get-result {
+    background-color: rgb(215, 154, 41);
+    color: white;
+}
+
+/* Hover effects for respective buttons */
+.buttons-functionalities:hover {
+    background-color: hsl(191, 44%, 57%); /* Slightly lighter */
+}
+
+.buttons-digits:hover {
+    background-color: hsl(30, 40%, 56%); /* Slightly lighter */
+}
+
+.arithmetic-operators:hover {
+    background-color: rgb(255, 192, 67); /* Slightly lighter yellow */
+}
+
+.get-result:hover {
+    background-color: #ffa500; /* Slightly lighter orange */
+}
+
+/* General button hover effect */
+button:active {
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+
