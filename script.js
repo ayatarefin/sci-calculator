@@ -123,6 +123,19 @@ function handleKey(button) {
     else if (button.name === "delete") { data.operation.pop(); data.formula.pop(); }
     else if (button.name === "inv") handleInverse();
 }
+function handleInverse() {
+    let formula_str = data.formula.join('');
+    try {
+        // Replace custom factorial calls with results
+        formula_str = formula_str.replace(/calculateFactorial\((\d+)\)/g, (match, number) => calculateFactorial(Number(number)));
+        let result = eval(1/formula_str); // Use eval for calculation
+        if (!isFinite(result)) { input_screen.textContent = "Error"; return; }
+        result = Math.round(result * 1e8) / 1e8; // Round to avoid floating-point issues
+        input_screen.textContent = result;
+        data.operation = [result.toString()]; data.formula = [result.toString()];
+    } catch (error) { input_screen.textContent = "Error"; data.operation = []; data.formula = []; }
+}
+
 
 // Other functions for handling constants, decimals, and parenthesis
 function handleParenthesis(button) { data.operation.push(button.symbol); data.formula.push(button.formula); }
