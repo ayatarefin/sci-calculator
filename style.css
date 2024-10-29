@@ -169,7 +169,6 @@ body {
     grid-template-columns: repeat(5, 1fr); /* 5 buttons per row */
     grid-template-rows: repeat(8, 1fr);   /* 8 rows total */
     gap: 5px;
-    margin-left: 10px;
 }
 
 /* Button styling */
