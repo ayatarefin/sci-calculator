@@ -22,13 +22,14 @@ body {
     justify-content: space-between;
     background-color: #222;
     padding: 15px;
-    border-radius: 1px;
+    border-radius: 10px; /* Slightly rounded corners for the screen */
     color: white;
     font-size: 1.5rem;
-    height: 80px;
+    height: 100px; /* Increased height for better visibility */
     margin-bottom: 30px;
 }
 
+/* Input and result text alignment */
 .input,
 .result {
     text-align: right;
@@ -45,12 +46,12 @@ body {
 /* Button styling */
 button {
     width: 100%;
-    height: 60px; /* Increased height for better roundness */
+    height: 60px; /* Consistent height for better roundness */
     font-size: 1.3rem; /* Base font size */
     background-color: #444;
     color: white;
     border: none;
-    border-radius: 50%; /* Make buttons fully round */
+    border-radius: 50%; /* Fully round buttons */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     transition: background-color 0.2s, box-shadow 0.2s;
 }
@@ -104,37 +105,37 @@ button:active {
 /* Responsive Styles */
 @media (max-width: 768px) {
     .calculator-container {
-        width: 90%; /* Make the calculator take up more screen space */
-        padding: 20px; /* Reduce padding */
+        width: 90%; /* More width on smaller screens */
+        padding: 20px; /* Reduced padding */
     }
 
     .screen {
-        height: 60px; /* Adjust screen height */
-        font-size: 1.2rem; /* Reduce font size */
+        height: 80px; /* Adjusted height for smaller screens */
+        font-size: 1.2rem; /* Reduced font size */
     }
 
     button {
-        height: 60px; /* Maintain button height */
+        height: 60px; /* Keep button height consistent */
         font-size: 1.1rem; /* Adjust font size */
-        border-radius: 50%; /* Maintain round shape */
+        border-radius: 50%; /* Fully round */
     }
 }
 
 @media (max-width: 480px) {
     .calculator-container {
         width: 95%; /* Full width on mobile */
-        padding: 15px; /* Further reduce padding */
+        padding: 15px; /* Further reduced padding */
     }
 
     .screen {
-        height: 50px; /* Adjust screen height */
-        font-size: 1rem; /* Further reduce font size */
+        height: 90px; /* Slightly larger screen height */
+        font-size: 1rem; /* Further reduced font size */
     }
 
     button {
         height: 60px; /* Keep consistent round height */
         font-size: 1rem; /* Adjust font size */
-        border-radius: 50%; /* Maintain round shape */
+        border-radius: 50%; /* Fully round */
     }
 }
 
@@ -143,6 +144,6 @@ button:active {
     button {
         height: 50px; /* Slightly smaller button height for very small screens */
         font-size: 0.9rem; /* Smaller font size */
-        border-radius: 50%; /* Maintain round shape */
+        border-radius: 50%; /* Fully round */
     }
 }
