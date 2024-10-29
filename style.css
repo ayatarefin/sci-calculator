@@ -118,33 +118,113 @@ button {
 }
 
 @media screen and (max-width: 480px) {
-    body {
-        padding: 0px;
-    }
-    
-    .calculator-container {
-        padding: 20px;
-    }
-    
-    .buttons {
-        gap: 4px;
-    }
-    /* General button hover effect */
-.buttons-functionalities.blah,
-.buttons-digits.blah,
-.arithmetic-operators.blah,
-.get-result.blah {
-    background-color: #cccccc; /* Replace with your desired brighter color */
-    transform: scale(1.05);
-    
+/* Full-Screen Calculator Styling */
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    background-color: #333; /* Full-screen calculator background */
+    height: 100vh;
+    overflow: hidden;
 }
+
+/* Main calculator container */
+.calculator-container {
+    width: 100vw;
+    height: 100vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #333;
+}
+
+/* Screen styling */
+.screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #222;
+    padding: 30px;
+    border-radius: 1px;
+    color: white;
+    font-size: 1.5rem;
+    height: 140px;
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+
+.input, .result {
+    text-align: right;
+}
+
+/* Buttons container */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 buttons per row */
+    grid-template-rows: repeat(8, 1fr);   /* 8 rows total */
+    gap: 20px;
+}
+
+/* Button styling */
 button {
-    width: 70%;
-    height: 40px;
-    font-size: 0.8rem;
+    width: 100%;
+    height: 60px;
+    font-size: 1.3rem;
+    background-color: #444;
     color: white;
     border: none;
     border-radius: 100px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+/* Functional buttons (C, %, etc.) */
+.buttons-functionalities {
+    background-color: hsl(190, 27%, 47%);
+    color: rgb(0, 0, 0);
+}
+
+/* Digits buttons (0-9) */
+.buttons-digits {
+    background-color: hsl(31, 28%, 47%);
+    color: white;
+}
+
+/* Arithmetic operators (+, -, *, /) */
+.arithmetic-operators {
+    background-color: rgb(238, 198, 98);
+    color: rgb(0, 0, 0);
+}
+
+/* Equals button (=) */
+.get-result {
+    background-color: rgb(215, 154, 41);
+    color: white;
+}
+
+/* Hover effects for respective buttons */
+.buttons-functionalities:hover,
+.buttons-functionalities.active {
+    background-color: hsl(191, 72%, 57%);
+}
+
+.buttons-digits:hover,
+.buttons-digits.active {
+    background-color: hsl(30, 63%, 59%);
+}
+
+.arithmetic-operators:hover,
+.arithmetic-operators.active {
+    background-color: rgb(254, 183, 42);
+}
+
+.get-result:hover,
+.get-result.active {
+    background-color: #ffa703;
+}
+
 }
