@@ -127,7 +127,7 @@ button {
     }
     
     .buttons {
-        gap: 6px;
+        gap: 4px;
     }
     /* General button hover effect */
 .buttons-functionalities.blah,
@@ -138,4 +138,13 @@ button {
     transform: scale(1.05);
     
 }
+button {
+    width: 50%;
+    height: 30px;
+    font-size: 0.8rem;
+    color: white;
+    border: none;
+    border-radius: 100px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.2s, box-shadow 0.2s;
 }
