@@ -3,6 +3,9 @@ const button_container = document.querySelector(".buttons");
 const input_screen = document.getElementById("input-screen");
 const result_screen = document.getElementById("result-screen");
 
+// Load the click sound
+const clickSound = new Audio('sounds/click.mp3');
+
 // Data structure to manage calculator operations
 let data = {
     operation: [],     // Stores the sequence of operations for display
@@ -65,7 +68,23 @@ function createCalculatorButtons() {
         } else if (button.type === "calculate") button_element.classList.add("get-result");
 
         // Add event listener for button clicks
-        button_element.addEventListener("click", () => buttonClick(button));
+        button_element.addEventListener("click", () => {
+            buttonClick(button); // Existing function call for button functionality
+            try {
+                clickSound.currentTime = 0; // Reset to start for repeated clicks
+                clickSound.play().catch(error => console.log("Error playing sound:", error));
+            } catch (error) {
+                console.log("Error with audio:", error);
+            }
+        });
+
+        // Handle touch events for mobile devices
+        button_element.addEventListener("touchstart", () => button_element.classList.add("active"));
+        
+        const removeActiveClass = () => button_element.classList.remove("active");
+        button_element.addEventListener("touchend", removeActiveClass);
+        button_element.addEventListener("touchcancel", removeActiveClass);
+
         button_container.appendChild(button_element);
     });
 }
@@ -165,3 +184,5 @@ function updateDisplay() { input_screen.textContent = data.operation.join(''); }
 
 // Initialize calculator on page load
 createCalculatorButtons();
+
+
