@@ -50,7 +50,7 @@ button {
     background-color: #444;
     color: white;
     border: none;
-    border-radius: 100px;
+    border-radius: 10px; /* Slightly less rounded for easier tapping */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     transition: background-color 0.2s, box-shadow 0.2s;
 }
@@ -114,8 +114,9 @@ button:active {
     }
 
     button {
-        height: 45px; /* Adjust button height */
+        height: 50px; /* Maintain button height */
         font-size: 1.1rem; /* Adjust font size */
+        border-radius: 8px; /* Slightly less rounding for easier clicking */
     }
 }
 
@@ -131,7 +132,16 @@ button:active {
     }
 
     button {
-        height: 40px; /* Further adjust button height */
-        font-size: 1rem; /* Further adjust font size */
+        height: 45px; /* Slightly smaller button height */
+        font-size: 1rem; /* Adjust font size */
+        border-radius: 5px; /* Less rounding for a more modern look */
+    }
+}
+
+/* Additional Responsive Adjustments */
+@media (max-width: 320px) {
+    button {
+        height: 40px; /* Further reduce button height for very small screens */
+        font-size: 0.9rem; /* Smaller font size */
     }
 }
