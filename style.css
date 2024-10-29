@@ -1,12 +1,13 @@
 /* Main calculator container */
-body{
+body {
     background-color: #000000;
     align-items: center;
     justify-content: center;
     margin-top: 50px;
 }
+
 .calculator-container {
-    width: 300px;
+    width: 300px; /* Base width */
     padding: 30px;
     margin: 0 auto;
     background-color: #333;
@@ -28,7 +29,8 @@ body{
     margin-bottom: 30px;
 }
 
-.input, .result {
+.input,
+.result {
     text-align: right;
 }
 
@@ -36,15 +38,15 @@ body{
 .buttons {
     display: grid;
     grid-template-columns: repeat(5, 1fr); /* 5 buttons per row */
-    grid-template-rows: repeat(8, 1fr);   /* 8 rows total */
+    grid-template-rows: repeat(8, 1fr); /* 8 rows total */
     gap: 10px; /* Space between buttons */
 }
 
 /* Button styling */
 button {
     width: 100%;
-    height: 50px;
-    font-size: 1.3rem;
+    height: 50px; /* Base button height */
+    font-size: 1.3rem; /* Base font size */
     background-color: #444;
     color: white;
     border: none;
@@ -99,4 +101,37 @@ button:active {
     box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .calculator-container {
+        width: 90%; /* Make the calculator take up more screen space */
+        padding: 20px; /* Reduce padding */
+    }
 
+    .screen {
+        height: 60px; /* Adjust screen height */
+        font-size: 1.2rem; /* Reduce font size */
+    }
+
+    button {
+        height: 45px; /* Adjust button height */
+        font-size: 1.1rem; /* Adjust font size */
+    }
+}
+
+@media (max-width: 480px) {
+    .calculator-container {
+        width: 95%; /* Full width on mobile */
+        padding: 15px; /* Further reduce padding */
+    }
+
+    .screen {
+        height: 50px; /* Adjust screen height */
+        font-size: 1rem; /* Further reduce font size */
+    }
+
+    button {
+        height: 40px; /* Further adjust button height */
+        font-size: 1rem; /* Further adjust font size */
+    }
+}
