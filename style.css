@@ -7,10 +7,9 @@ body {
 }
 
 .calculator-container {
-    width: 320px; /* Fixed width for better appearance */
-    max-width: 90vw; /* Responsive on smaller screens */
-    padding: 20px;
-    margin: 0 auto;
+    width: 300px; /* Default width for larger screens */
+    max-width: 90vw; /* Responsive width for smaller screens */
+    padding: 20px; /* Reduced padding for better layout */
     background-color: #333;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
@@ -22,11 +21,11 @@ body {
     justify-content: space-between;
     background-color: #222;
     padding: 15px;
-    border-radius: 10px;
+    border-radius: 5px; /* Slightly rounded corners */
     color: white;
     font-size: 2rem; /* Increased font size for better readability */
-    height: 100px;
-    margin-bottom: 20px;
+    height: 90px; /* Increased height for better display */
+    margin-bottom: 20px; /* Reduced margin for spacing */
 }
 
 .input, .result {
@@ -35,84 +34,96 @@ body {
 
 .buttons {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Adjusted to 4 buttons per row for better layout */
-    grid-template-rows: repeat(5, 1fr);
-    gap: 10px;
+    grid-template-columns: repeat(4, 1fr); /* 4 buttons per row for better layout */
+    grid-template-rows: repeat(5, 1fr); /* Adjusted number of rows */
+    gap: 10px; /* Space between buttons */
 }
 
+/* Button styling */
 button {
     width: 100%;
-    height: 60px;
+    height: 60px; /* Increased height for better touch target */
     font-size: 1.5rem; /* Larger font size for buttons */
     background-color: #444;
     color: white;
     border: none;
-    border-radius: 50%;
+    border-radius: 50%; /* Fully rounded buttons */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     transition: background-color 0.2s, box-shadow 0.2s;
 }
 
+/* Functional buttons (C, %, etc.) */
 .buttons-functionalities {
     background-color: hsl(190, 27%, 47%);
     color: rgb(0, 0, 0);
 }
 
+/* Digits buttons (0-9) */
 .buttons-digits {
     background-color: hsl(31, 28%, 47%);
 }
 
+/* Arithmetic operators (+, -, *, /) */
 .arithmetic-operators {
     background-color: rgb(238, 198, 98);
 }
 
+/* Equals button (=) */
 .get-result {
     background-color: rgb(215, 154, 41);
 }
 
-button:hover {
-    filter: brightness(1.1);
+/* Hover effects for respective buttons */
+.buttons-functionalities:hover {
+    background-color: hsl(191, 44%, 57%);
 }
 
+.buttons-digits:hover {
+    background-color: hsl(30, 40%, 56%);
+}
+
+.arithmetic-operators:hover {
+    background-color: rgb(255, 192, 67);
+}
+
+.get-result:hover {
+    background-color: #ffa500;
+}
+
+/* General button hover effect */
 button:active {
     box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
+/* Responsive styles */
 @media (max-width: 768px) {
     .calculator-container {
-        width: 90%;
+        max-width: 95%; /* Slightly wider on tablets */
     }
 
     .screen {
-        height: 90px; /* Adjusted height for mobile */
-        font-size: 1.8rem; /* Increased font size for mobile */
+        height: 80px; /* Reduced height for tablets */
+        font-size: 1.8rem; /* Adjusted font size for tablets */
     }
 
     button {
-        height: 60px;
-        font-size: 1.2rem; /* Adjusted button font size for mobile */
+        height: 50px; /* Adjusted button height for tablets */
+        font-size: 1.3rem; /* Adjusted button font size for tablets */
     }
 }
 
 @media (max-width: 480px) {
     .calculator-container {
-        width: 95%;
-        padding: 15px;
+        max-width: 100%; /* Full width on mobile */
     }
 
     .screen {
-        height: 80px; /* Slightly reduced for smaller screens */
-        font-size: 1.5rem; /* Increased font size for mobile */
+        height: 70px; /* Reduced height for mobile */
+        font-size: 1.5rem; /* Adjusted font size for mobile */
     }
 
     button {
-        height: 60px;
-        font-size: 1rem; /* Adjusted button font size for mobile */
-    }
-}
-
-@media (max-width: 320px) {
-    button {
-        height: 50px;
-        font-size: 0.9rem;
+        height: 45px; /* Adjusted button height for mobile */
+        font-size: 1.1rem; /* Adjusted button font size for mobile */
     }
 }
