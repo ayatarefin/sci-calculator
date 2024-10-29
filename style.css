@@ -1,149 +1,117 @@
-/* Main calculator container */
 body {
-    background-color: #000000;
+    background-color: #000;
+    display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 50px;
 }
 
 .calculator-container {
-    width: 300px; /* Base width */
-    padding: 30px;
+    width: 300px;
+    padding: 20px;
     margin: 0 auto;
     background-color: #333;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Screen styling */
 .screen {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     background-color: #222;
     padding: 15px;
-    border-radius: 10px; /* Slightly rounded corners for the screen */
+    border-radius: 10px;
     color: white;
     font-size: 1.5rem;
-    height: 100px; /* Increased height for better visibility */
-    margin-bottom: 30px;
+    height: 100px;
+    margin-bottom: 20px;
 }
 
-/* Input and result text alignment */
-.input,
-.result {
+.input, .result {
     text-align: right;
 }
 
-/* Buttons container */
 .buttons {
     display: grid;
-    grid-template-columns: repeat(5, 1fr); /* 5 buttons per row */
-    grid-template-rows: repeat(8, 1fr); /* 8 rows total */
-    gap: 10px; /* Space between buttons */
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    gap: 10px;
 }
 
-/* Button styling */
 button {
     width: 100%;
-    height: 60px; /* Consistent height for better roundness */
-    font-size: 1.3rem; /* Base font size */
+    height: 60px;
+    font-size: 1.3rem;
     background-color: #444;
     color: white;
     border: none;
-    border-radius: 50%; /* Fully round buttons */
+    border-radius: 50%;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     transition: background-color 0.2s, box-shadow 0.2s;
 }
 
-/* Functional buttons (C, %, etc.) */
 .buttons-functionalities {
     background-color: hsl(190, 27%, 47%);
     color: rgb(0, 0, 0);
 }
 
-/* Digits buttons (0-9) */
 .buttons-digits {
     background-color: hsl(31, 28%, 47%);
-    color: white;
 }
 
-/* Arithmetic operators (+, -, *, /) */
 .arithmetic-operators {
     background-color: rgb(238, 198, 98);
-    color: rgb(0, 0, 0);
 }
 
-/* Equals button (=) */
 .get-result {
     background-color: rgb(215, 154, 41);
-    color: white;
 }
 
-/* Hover effects for respective buttons */
-.buttons-functionalities:hover {
-    background-color: hsl(191, 44%, 57%); /* Slightly lighter */
+button:hover {
+    filter: brightness(1.1);
 }
 
-.buttons-digits:hover {
-    background-color: hsl(30, 40%, 56%); /* Slightly lighter */
-}
-
-.arithmetic-operators:hover {
-    background-color: rgb(255, 192, 67); /* Slightly lighter yellow */
-}
-
-.get-result:hover {
-    background-color: #ffa500; /* Slightly lighter orange */
-}
-
-/* General button hover effect */
 button:active {
     box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-/* Responsive Styles */
 @media (max-width: 768px) {
     .calculator-container {
-        width: 90%; /* More width on smaller screens */
-        padding: 20px; /* Reduced padding */
+        width: 90%;
     }
 
     .screen {
-        height: 80px; /* Adjusted height for smaller screens */
-        font-size: 1.2rem; /* Reduced font size */
+        height: 80px;
+        font-size: 1.2rem;
     }
 
     button {
-        height: 60px; /* Keep button height consistent */
-        font-size: 1.1rem; /* Adjust font size */
-        border-radius: 50%; /* Fully round */
+        height: 60px;
+        font-size: 1.1rem;
     }
 }
 
 @media (max-width: 480px) {
     .calculator-container {
-        width: 95%; /* Full width on mobile */
-        padding: 15px; /* Further reduced padding */
+        width: 95%;
+        padding: 15px;
     }
 
     .screen {
-        height: 90px; /* Slightly larger screen height */
-        font-size: 1rem; /* Further reduced font size */
+        height: 90px;
+        font-size: 1rem;
     }
 
     button {
-        height: 60px; /* Keep consistent round height */
-        font-size: 1rem; /* Adjust font size */
-        border-radius: 50%; /* Fully round */
+        height: 60px;
+        font-size: 1rem;
     }
 }
 
-/* Additional Responsive Adjustments */
 @media (max-width: 320px) {
     button {
-        height: 50px; /* Slightly smaller button height for very small screens */
-        font-size: 0.9rem; /* Smaller font size */
-        border-radius: 50%; /* Fully round */
+        height: 50px;
+        font-size: 0.9rem;
     }
 }
